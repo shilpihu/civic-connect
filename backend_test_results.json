@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-10-31T07:00:20.266473",
-  "total_tests": 12,
-  "passed_tests": 11,
-  "success_rate": 91.66666666666666,
+  "timestamp": "2025-10-31T07:00:36.595441",
+  "total_tests": 13,
+  "passed_tests": 13,
+  "success_rate": 100.0,
   "test_details": [
     {
       "test": "User Signup",
@@ -60,9 +60,14 @@
       "details": "Status: 200"
     },
     {
+      "test": "Admin User Creation",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
       "test": "Get Users",
-      "success": false,
-      "details": "Status: 403, Response: {'detail': 'Not authorized'}"
+      "success": true,
+      "details": "Status: 200"
     }
   ]
 }
