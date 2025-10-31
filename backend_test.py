@@ -319,9 +319,13 @@ class CivicConnectAPITester:
         print("\n📊 Analytics Tests:")
         self.test_get_analytics()
 
-        # User Management Tests
+        # User Management Tests (need admin role)
         print("\n👥 User Management Tests:")
-        self.test_get_users()
+        # Create admin user for user management tests
+        if not self.test_admin_signup_and_login():
+            print("❌ Could not create admin user for user management tests")
+        else:
+            self.test_get_users()
 
         # Print Summary
         print("\n" + "=" * 60)
