@@ -151,6 +151,12 @@ class CivicConnectAPITester:
 
     def test_create_report(self):
         """Test creating a report"""
+        # Create report using form data (multipart/form-data)
+        url = f"{self.base_url}/reports"
+        headers = {}
+        if self.token:
+            headers['Authorization'] = f'Bearer {self.token}'
+        
         report_data = {
             "title": "Test Water Leak Report",
             "description": "Water leak on main street",
@@ -161,18 +167,30 @@ class CivicConnectAPITester:
             "address": "123 Main Street, New York, NY"
         }
         
-        success, response = self.run_test(
-            "Create Report",
-            "POST",
-            "reports",
-            200,
-            data=report_data
-        )
-        
-        if success and 'id' in response:
-            self.report_id = response['id']
-            return True
-        return False
+        try:
+            response = requests.post(url, data=report_data, headers=headers)
+            success = response.status_code == 200
+            details = f"Status: {response.status_code}"
+            
+            if not success:
+                try:
+                    error_detail = response.json()
+                    details += f", Response: {error_detail}"
+                except:
+                    details += f", Response: {response.text[:200]}"
+            
+            self.log_test("Create Report", success, details)
+            
+            if success:
+                response_data = response.json()
+                if 'id' in response_data:
+                    self.report_id = response_data['id']
+                    return True
+            return False
+            
+        except Exception as e:
+            self.log_test("Create Report", False, f"Exception: {str(e)}")
+            return False
 
     def test_get_reports(self):
         """Test getting all reports"""
