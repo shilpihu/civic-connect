@@ -295,9 +295,9 @@ class CivicConnectAPITester:
         # Authentication Tests
         print("\n🔐 Authentication Tests:")
         if not self.test_user_signup():
-            print("❌ Signup failed, trying login...")
-            if not self.test_user_login():
-                print("❌ Both signup and login failed, stopping tests")
+            print("❌ Citizen signup failed, trying admin signup...")
+            if not self.test_admin_signup_and_login():
+                print("❌ Both citizen and admin signup failed, stopping tests")
                 return False
 
         self.test_get_current_user()
