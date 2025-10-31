@@ -528,9 +528,6 @@ async def get_users(
 # Include the router in the main app
 app.include_router(api_router)
 
-# Mount static files for uploads
-app.mount("/uploads", StaticFiles(directory=str(UPLOADS_DIR)), name="uploads")
-
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
@@ -538,6 +535,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount static files for uploads - must be after CORS middleware
+app.mount("/uploads", StaticFiles(directory=str(UPLOADS_DIR)), name="uploads")
+app.mount("/api/uploads", StaticFiles(directory=str(UPLOADS_DIR)), name="api_uploads")
 
 # Configure logging
 logging.basicConfig(
