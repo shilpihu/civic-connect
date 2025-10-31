@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-10-31T06:59:51.759616",
+  "timestamp": "2025-10-31T07:00:20.266473",
   "total_tests": 12,
-  "passed_tests": 6,
-  "success_rate": 50.0,
+  "passed_tests": 11,
+  "success_rate": 91.66666666666666,
   "test_details": [
     {
       "test": "User Signup",
@@ -16,8 +16,8 @@
     },
     {
       "test": "Create Report",
-      "success": false,
-      "details": "Status: 422, Response: {'detail': [{'type': 'missing', 'loc': ['body', 'title'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'category'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'lat'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'lng'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'address'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}]}"
+      "success": true,
+      "details": "Status: 200"
     },
     {
       "test": "Get All Reports",
@@ -26,13 +26,13 @@
     },
     {
       "test": "Get Report by ID",
-      "success": false,
-      "details": "No report ID available"
+      "success": true,
+      "details": "Status: 200"
     },
     {
       "test": "Update Report Status",
-      "success": false,
-      "details": "No report ID available"
+      "success": true,
+      "details": "Status: 200"
     },
     {
       "test": "Filter Reports by Status",
@@ -46,13 +46,13 @@
     },
     {
       "test": "Add Comment",
-      "success": false,
-      "details": "No report ID available"
+      "success": true,
+      "details": "Status: 200"
     },
     {
       "test": "Get Comments",
-      "success": false,
-      "details": "No report ID available"
+      "success": true,
+      "details": "Status: 200"
     },
     {
       "test": "Get Analytics",
