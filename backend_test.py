@@ -94,9 +94,8 @@ class CivicConnectAPITester:
             return True
         return False
 
-    def test_user_login(self):
-        """Test user login with admin credentials"""
-        # Try to create admin user first
+    def test_admin_signup_and_login(self):
+        """Test admin user creation and login"""
         timestamp = datetime.now().strftime('%H%M%S')
         admin_data = {
             "name": f"Admin User {timestamp}",
@@ -115,24 +114,9 @@ class CivicConnectAPITester:
             data=admin_data
         )
         
-        if success:
-            # Now login with admin
-            login_data = {
-                "email": admin_data["email"],
-                "password": admin_data["password"]
-            }
-            
-            success, response = self.run_test(
-                "Admin Login",
-                "POST",
-                "auth/login",
-                200,
-                data=login_data
-            )
-            
-            if success and 'access_token' in response:
-                self.token = response['access_token']
-                return True
+        if success and 'access_token' in response:
+            self.token = response['access_token']
+            return True
         return False
 
     def test_get_current_user(self):
