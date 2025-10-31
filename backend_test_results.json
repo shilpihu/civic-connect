@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-10-31T06:59:51.759616",
+  "total_tests": 12,
+  "passed_tests": 6,
+  "success_rate": 50.0,
+  "test_details": [
+    {
+      "test": "User Signup",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Current User",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Create Report",
+      "success": false,
+      "details": "Status: 422, Response: {'detail': [{'type': 'missing', 'loc': ['body', 'title'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'category'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'lat'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'lng'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}, {'type': 'missing', 'loc': ['body', 'address'], 'msg': 'Field required', 'input': None, 'url': 'https://errors.pydantic.dev/2.12/v/missing'}]}"
+    },
+    {
+      "test": "Get All Reports",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Report by ID",
+      "success": false,
+      "details": "No report ID available"
+    },
+    {
+      "test": "Update Report Status",
+      "success": false,
+      "details": "No report ID available"
+    },
+    {
+      "test": "Filter Reports by Status",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Filter Reports by Category",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Add Comment",
+      "success": false,
+      "details": "No report ID available"
+    },
+    {
+      "test": "Get Comments",
+      "success": false,
+      "details": "No report ID available"
+    },
+    {
+      "test": "Get Analytics",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Users",
+      "success": false,
+      "details": "Status: 403, Response: {'detail': 'Not authorized'}"
+    }
+  ]
+}
