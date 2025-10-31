@@ -208,7 +208,7 @@ def save_upload_file(upload_file: UploadFile) -> str:
     except:
         pass
     
-    return f"/uploads/{unique_filename}"
+    return f"/api/uploads/{unique_filename}"
 
 
 # Routes
