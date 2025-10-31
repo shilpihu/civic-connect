@@ -38,7 +38,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # Security
-security = HTTPBearer()
+security = HTTPBearer(auto_error=False)
 
 # Create the main app without a prefix
 app = FastAPI()
